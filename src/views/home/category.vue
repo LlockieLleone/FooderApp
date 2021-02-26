@@ -15,7 +15,10 @@
 </template>
 
 <script>
-import axios from 'axios'
+
+    //import from api folder
+    import {getCategory} from '@/api/home.js'
+
     export default {
         data(){
             return{
@@ -23,15 +26,9 @@ import axios from 'axios'
             }
         },
         created(){
-            axios.get('http://admin.gxxmglzx.com/tender/test/get_type').then(res=>{
-                if(res.data.errcode == 200){
-                    //console.log(res.data.data)
-                    this.cateList = res.data.data;
-                }else{
-                    console.log(res.data.errmsg)
-                }
-            }).catch(res=>{
-                console.log(res);
+            //no param data send to axios here, so put getCategory param empty
+            getCategory().then(res=>{
+                 this.cateList = res.data;
             })
         }
     }
