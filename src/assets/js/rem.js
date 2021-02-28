@@ -4,9 +4,9 @@
     var tid;
 
     function refreshRem() {
-        // 获取屏幕宽度
+        // get screen width
         var width = docEl.getBoundingClientRect().width;
-        var rem = width / 7.5;  // 将屏幕宽度分成7.5份， 1份为1rem 
+        var rem = width / 7.5;  // devide screen width into 7.5 piece, 1 piece = 1 rem 
         docEl.style.fontSize = rem + 'px';
 
     }

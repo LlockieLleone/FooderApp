@@ -7,14 +7,18 @@
             </div>
         </van-sticky>
         <category></category>
+        <div class="title">Recent restaurant</div>
+        <list></list>
     </div>
 </template>
 
 <script>
 import category from './category'
+import list from './list'
     export default {
         components:{
-            category
+            category,
+            list
         }
     }
 </script>
@@ -31,5 +35,21 @@ import category from './category'
             padding:0 0.2rem;
             box-sizing: border-box;
         }
+    }
+    .title{
+        font-size: 0.4rem;//(17px/50)
+        font-weight: 800;
+        text-align: center;
+        height: 0.46rem;
+        margin: 0.3rem 0 0.1rem;
+    }
+    .title::after,.title::before{
+        content:"";
+        height:1px;
+        transform: scaleY(0.5);
+        width:30px;
+        display:inline-block;
+        background: #666;
+        vertical-align: middle;
     }
 </style>
