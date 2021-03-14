@@ -9,7 +9,7 @@
             @load="getData"
         >
         <ul class="list-container">
-            <li class="restaurant-list" v-for="item in list" :key="item.id">
+            <li class="restaurant-list" v-for="item in list" :key="item.id" @click="goDetail(item.id )">
                 <div class="img-box">
                     <img :src="item.img" alt/>
                 </div>
@@ -71,6 +71,9 @@
                         this.finished = true;
                     }
                 })
+            },
+            goDetail(id){
+                this.$router.push({path:'/detail',query:{id}})
             }
         }
     }
